@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 /**
+ * 验证参数的断言工具类
  * Assertion utility class that assists in validating arguments.
  *
  * <p>Useful for identifying programmer errors early and clearly at runtime.
@@ -57,6 +58,7 @@ import java.util.function.Supplier;
 public abstract class Assert {
 
 	/**
+	 * 断言一个boolean表达式
 	 * Assert a boolean expression, throwing an {@code IllegalStateException}
 	 * if the expression evaluates to {@code false}.
 	 * <p>Call {@link #isTrue} if you wish to throw an {@code IllegalArgumentException}
@@ -73,6 +75,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言一个boolean表达式,jdk1.8 lamda表达式
 	 * Assert a boolean expression, throwing an {@code IllegalStateException}
 	 * if the expression evaluates to {@code false}.
 	 * <p>Call {@link #isTrue} if you wish to throw an {@code IllegalArgumentException}
@@ -94,6 +97,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #state(boolean, String)}
 	 */
 	@Deprecated
@@ -102,6 +106,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言一个boolean表达式,抛出参数异常
 	 * Assert a boolean expression, throwing an {@code IllegalArgumentException}
 	 * if the expression evaluates to {@code false}.
 	 * <pre class="code">Assert.isTrue(i &gt; 0, "The value must be greater than zero");</pre>
@@ -116,6 +121,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言一个boolean表达式,抛出参数非法异常 jdk1.8 lamda表达式
 	 * Assert a boolean expression, throwing an {@code IllegalArgumentException}
 	 * if the expression evaluates to {@code false}.
 	 * <pre class="code">
@@ -134,6 +140,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #isTrue(boolean, String)}
 	 */
 	@Deprecated
@@ -142,6 +149,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言object对象是否为null
 	 * Assert that an object is {@code null}.
 	 * <pre class="code">Assert.isNull(value, "The value must be null");</pre>
 	 * @param object the object to check
@@ -155,6 +163,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言object对象是否为null
 	 * Assert that an object is {@code null}.
 	 * <pre class="code">
 	 * Assert.isNull(value, () -&gt; "The value '" + value + "' must be null");
@@ -172,6 +181,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #isNull(Object, String)}
 	 */
 	@Deprecated
@@ -180,6 +190,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言object对象不为空,抛出参数非法异常
 	 * Assert that an object is not {@code null}.
 	 * <pre class="code">Assert.notNull(clazz, "The class must not be null");</pre>
 	 * @param object the object to check
@@ -193,6 +204,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言object对象不为空,抛出参数非法异常 jdk1.8
 	 * Assert that an object is not {@code null}.
 	 * <pre class="code">
 	 * Assert.notNull(clazz, () -&gt; "The class '" + clazz.getName() + "' must not be null");
@@ -210,6 +222,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #notNull(Object, String)}
 	 */
 	@Deprecated
@@ -218,6 +231,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言text不为空
 	 * Assert that the given String is not empty; that is,
 	 * it must not be {@code null} and not the empty String.
 	 * <pre class="code">Assert.hasLength(name, "Name must not be empty");</pre>
@@ -233,6 +247,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 *  断言text不为空
 	 * Assert that the given String is not empty; that is,
 	 * it must not be {@code null} and not the empty String.
 	 * <pre class="code">
@@ -252,6 +267,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #hasLength(String, String)}
 	 */
 	@Deprecated
@@ -261,6 +277,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言text字符是否包含有效的内容
 	 * Assert that the given String contains valid text content; that is, it must not
 	 * be {@code null} and must contain at least one non-whitespace character.
 	 * <pre class="code">Assert.hasText(name, "'name' must not be empty");</pre>
@@ -276,6 +293,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言text字符是否包含有效的内容
 	 * Assert that the given String contains valid text content; that is, it must not
 	 * be {@code null} and must contain at least one non-whitespace character.
 	 * <pre class="code">
@@ -295,6 +313,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #hasText(String, String)}
 	 */
 	@Deprecated
@@ -304,6 +323,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言textToSearch字符串不能包含substring字符串
 	 * Assert that the given text does not contain the given substring.
 	 * <pre class="code">Assert.doesNotContain(name, "rod", "Name must not contain 'rod'");</pre>
 	 * @param textToSearch the text to search
@@ -319,6 +339,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言textToSearch字符串不能包含substring字符串 jdk1.8
 	 * Assert that the given text does not contain the given substring.
 	 * <pre class="code">
 	 * Assert.doesNotContain(name, forbidden, () -&gt; "Name must not contain '" + forbidden + "'");
@@ -338,6 +359,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #doesNotContain(String, String, String)}
 	 */
 	@Deprecated
@@ -347,6 +369,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言array数组不能为空
 	 * Assert that an array contains elements; that is, it must not be
 	 * {@code null} and must contain at least one element.
 	 * <pre class="code">Assert.notEmpty(array, "The array must contain elements");</pre>
@@ -361,6 +384,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言array数组不能为空
 	 * Assert that an array contains elements; that is, it must not be
 	 * {@code null} and must contain at least one element.
 	 * <pre class="code">
@@ -379,6 +403,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #notEmpty(Object[], String)}
 	 */
 	@Deprecated
@@ -387,6 +412,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言array数组不能包含空元素
 	 * Assert that an array contains no {@code null} elements.
 	 * <p>Note: Does not complain if the array is empty!
 	 * <pre class="code">Assert.noNullElements(array, "The array must contain non-null elements");</pre>
@@ -405,6 +431,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言array数组不能包含空元素
 	 * Assert that an array contains no {@code null} elements.
 	 * <p>Note: Does not complain if the array is empty!
 	 * <pre class="code">
@@ -427,6 +454,8 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言array数组不能包含空元素
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #noNullElements(Object[], String)}
 	 */
 	@Deprecated
@@ -435,6 +464,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言collection集合不能为空
 	 * Assert that a collection contains elements; that is, it must not be
 	 * {@code null} and must contain at least one element.
 	 * <pre class="code">Assert.notEmpty(collection, "Collection must contain elements");</pre>
@@ -450,6 +480,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言collection集合不能为空
 	 * Assert that a collection contains elements; that is, it must not be
 	 * {@code null} and must contain at least one element.
 	 * <pre class="code">
@@ -469,6 +500,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #notEmpty(Collection, String)}
 	 */
 	@Deprecated
@@ -478,6 +510,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言map不能为空
 	 * Assert that a Map contains entries; that is, it must not be {@code null}
 	 * and must contain at least one entry.
 	 * <pre class="code">Assert.notEmpty(map, "Map must contain entries");</pre>
@@ -492,6 +525,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言map不能为空
 	 * Assert that a Map contains entries; that is, it must not be {@code null}
 	 * and must contain at least one entry.
 	 * <pre class="code">
@@ -510,6 +544,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 已过时
 	 * @deprecated as of 4.3.7, in favor of {@link #notEmpty(Map, String)}
 	 */
 	@Deprecated
@@ -518,6 +553,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * 断言object对象必须是type类型
 	 * Assert that the provided object is an instance of the provided class.
 	 * <pre class="code">Assert.instanceOf(Foo.class, foo, "Foo expected");</pre>
 	 * @param type the type to check against
@@ -537,6 +573,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 *  断言object对象必须是type类型
 	 * Assert that the provided object is an instance of the provided class.
 	 * <pre class="code">
 	 * Assert.instanceOf(Foo.class, foo, () -&gt; "Processing " + Foo.class.getSimpleName() + ":");
@@ -556,6 +593,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 *  断言object对象必须是type类型
 	 * Assert that the provided object is an instance of the provided class.
 	 * <pre class="code">Assert.instanceOf(Foo.class, foo);</pre>
 	 * @param type the type to check against
@@ -567,6 +605,7 @@ public abstract class Assert {
 	}
 
 	/**
+	 * isAssignableFrom   是用来判断一个类Class1和另一个类Class2是否相同或是另一个类的超类或接口。
 	 * Assert that {@code superType.isAssignableFrom(subType)} is {@code true}.
 	 * <pre class="code">Assert.isAssignable(Number.class, myClass, "Number expected");</pre>
 	 * @param superType the super type to check against
