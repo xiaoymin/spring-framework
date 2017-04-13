@@ -75,7 +75,7 @@ public abstract class Assert {
 	}
 
 	/**
-	 * 断言一个boolean表达式,jdk1.8 lamda表达式
+	 * 断言一个boolean表达式,jdk1.8 lambda表达式
 	 * Assert a boolean expression, throwing an {@code IllegalStateException}
 	 * if the expression evaluates to {@code false}.
 	 * <p>Call {@link #isTrue} if you wish to throw an {@code IllegalArgumentException}
@@ -121,7 +121,7 @@ public abstract class Assert {
 	}
 
 	/**
-	 * 断言一个boolean表达式,抛出参数非法异常 jdk1.8 lamda表达式
+	 * 断言一个boolean表达式,抛出参数非法异常 jdk1.8 lambda表达式
 	 * Assert a boolean expression, throwing an {@code IllegalArgumentException}
 	 * if the expression evaluates to {@code false}.
 	 * <pre class="code">
